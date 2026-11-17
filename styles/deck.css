@@ -1,0 +1,161 @@
+:root {
+  --c-primary: #0b22d2;
+  --c-ink: #040d1e;
+  --c-muted: #737373;
+  --c-surface: #f5f5f6;
+  --c-border: #d4d4d4;
+  --c-purple: #864cce;
+  --c-violet: #8a38f5;
+  --c-tint: #f3f4fd;
+  --c-green: #198f51;
+  --c-orange: #f65009;
+
+  --g-blue: linear-gradient(90deg, #0b22d2 0%, #27b7ca 100%);
+  --g-pink: linear-gradient(90deg, #8900cb 0%, #eca6b0 100%);
+
+  --f-head: 'Geist Variable', 'Geist', system-ui, sans-serif;
+  --f-body: 'DM Sans Variable', 'DM Sans', system-ui, sans-serif;
+}
+
+.insury-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--c-ink);
+  font-family: var(--f-body);
+  /* Figma uses static "DM Sans", which is the 14pt optical size */
+  font-variation-settings: 'opsz' 14;
+  -webkit-font-smoothing: antialiased;
+}
+
+.insury-slide :where(h1, h2, h3, h4, p) {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Type scale, named after the Figma text styles */
+.t-hero,
+.t-title,
+.t-h1,
+.t-h2,
+.t-h3 {
+  font-family: var(--f-head);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+.t-hero { font-size: 96px; line-height: 1; }
+.t-title { font-size: 96px; line-height: 1; }
+.t-h1 { font-size: 64px; line-height: 1.1; }
+.t-h2 { font-size: 48px; line-height: 1.2; }
+.t-h3 { font-size: 36px; line-height: 1.32; }
+
+.t-body1,
+.t-body2,
+.t-body3 {
+  font-family: var(--f-body);
+  font-weight: 400;
+  line-height: 1.26;
+  letter-spacing: -0.03em;
+}
+
+.t-body1 { font-size: 36px; }
+.t-body2 { font-size: 28px; }
+.t-body3 { font-size: 24px; }
+
+.t-label-sm {
+  font-family: var(--f-head);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.c-primary { color: var(--c-primary); }
+.c-ink { color: var(--c-ink); }
+.c-muted { color: var(--c-muted); }
+.c-white { color: #fff; }
+.c-black { color: #000; }
+
+.abs { position: absolute; }
+
+/* Rounded pills ("Badge" in Figma) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-family: var(--f-body);
+}
+
+.pill--lg {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 26px;
+  line-height: 33.6px;
+  letter-spacing: -0.5px;
+}
+
+.pill--count {
+  width: 70px;
+  height: 43px;
+  font-size: 28px;
+  line-height: 1.26;
+  letter-spacing: -0.03em;
+}
+
+.pill--sm {
+  height: 33px;
+  padding: 0 14px;
+  font-size: 20px;
+  line-height: 1.26;
+  letter-spacing: -0.03em;
+}
+
+.pill--primary { background: var(--c-primary); color: #fff; }
+.pill--purple { background: var(--c-purple); color: #fff; }
+.pill--violet { background: var(--c-violet); color: #fff; }
+.pill--outline { background: var(--c-surface); color: #000; box-shadow: inset 0 0 0 1px var(--c-ink); }
+.pill--tint { background: rgba(11, 34, 210, 0.1); color: var(--c-primary); box-shadow: inset 0 0 0 1px var(--c-primary); }
+
+/* Faded grey stripe texture used behind several panels */
+.stripes {
+  position: absolute;
+  left: 0;
+  width: 1328px;
+  height: 570px;
+  object-fit: cover;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.flip-y { transform: scaleY(-1); }
+.flip-x { transform: scaleX(-1); }
+.flip-xy { transform: scale(-1, -1); }
+
+/* Product sign-off card (cover and product slides) */
+.signoff-card {
+  position: absolute;
+  width: 432px;
+  height: 646px;
+  padding: 16px;
+  border-radius: 28.7px;
+  background: #fff;
+  box-shadow:
+    0 0 0 14.4px rgba(11, 34, 210, 0.2),
+    0 0 72px 14px rgba(11, 34, 210, 0.2);
+}
+
+.signoff-card img {
+  display: block;
+  width: 400px;
+  height: 616px;
+  object-fit: cover;
+  outline: 1px solid rgba(255, 255, 255, 0.7);
+  outline-offset: -1px;
+}
