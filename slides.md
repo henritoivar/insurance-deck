@@ -1,7 +1,17 @@
 ---
 theme: none
 title: Insury — Pitch Deck
-info: AI claims. Human decisions. Seed round pitch deck, recreated from Figma.
+titleTemplate: '%s'
+favicon: /favicon.svg
+info: Insurance claims, decided in minutes.
+seoMeta:
+  ogTitle: Insury — Insurance claims, decided in minutes.
+  ogDescription: AI reads. Rules decide. Your team signs off.
+  ogImage: /og-image.png
+  twitterCard: summary_large_image
+  twitterTitle: Insury — Insurance claims, decided in minutes.
+  twitterDescription: AI reads. Rules decide. Your team signs off.
+  twitterImage: /og-image.png
 canvasWidth: 1920
 aspectRatio: 16/9
 colorSchema: light
@@ -16,7 +26,6 @@ layout: cover
 <Logo class="cover-logo" />
 <div class="cover-copy">
   <h1 class="t-hero">Insurance claims,<br><span class="c-primary">decided in minutes.</span></h1>
-  <p class="t-body2">AI reads. Rules decide. Your team signs off.</p>
 </div>
 <img class="cover-shot" src="/images/product-report.png" alt="Insury report and sign-off screen" />
 <div class="signoff-card cover-signoff"><img src="/images/signoff-card.png" alt="Sign-off panel" /></div>
@@ -866,7 +875,7 @@ panel: outlined
 ---
 layout: deck
 badge: Policy check
-title: "Every rule,\nexplained."
+title: "Every decision,\nexplained."
 subtitle: Each check shows its reasoning and the facts behind it. Missing information is requested. The payout traces back to the invoice lines.
 panel: light
 ---
@@ -1657,6 +1666,7 @@ panel: light
 </style>
 
 ---
+hide: true
 layout: deck
 badge: Competition
 title: Built to be defended.
@@ -1809,6 +1819,7 @@ panel: light
 </style>
 
 ---
+hide: true
 layout: deck
 badge: Business model
 title: Paid per assessed claim.
@@ -1936,6 +1947,7 @@ panel: blue
 </style>
 
 ---
+hide: true
 layout: deck
 badge: Financial projections
 title: Five-year outlook.
@@ -2034,6 +2046,7 @@ panel: light
 </style>
 
 ---
+hide: true
 layout: deck
 badge: Sales approach
 title: Direct and via partners.
@@ -2122,6 +2135,7 @@ panel: light
 </style>
 
 ---
+hide: true
 layout: deck
 badge: Traction
 title: Built and running.
@@ -2225,6 +2239,7 @@ panel: none
 </style>
 
 ---
+hide: true
 layout: deck
 badge: Testimonial
 title: In their words.
@@ -2328,6 +2343,7 @@ panel: light
 </style>
 
 ---
+hide: true
 layout: deck
 badge: The ask
 title: From pilot to live insurers.
