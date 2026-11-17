@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
-    "export": "slidev export"
+    "export": "slidev export --format png --scale 2 --output .export-pages && node scripts/pages-to-pdf.mjs"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",
