@@ -2,6 +2,7 @@
   "name": "insury-pitch-deck",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.22.0",
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",

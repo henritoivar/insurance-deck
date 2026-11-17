@@ -1,0 +1,9 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  # @slidev/cli 53 requires Node >= 22.22
+  NODE_VERSION = "24"
+  # Chromium is only needed for `slidev export`, not for building the site
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1"

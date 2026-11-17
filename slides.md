@@ -588,59 +588,863 @@ panel: blue
 
 ---
 layout: deck
-badge: Product
-title: "One case.\nOne screen."
-subtitle: The model reads and checks. A person makes the call.
+badge: Traceability
+title: "Every fact,\nsourced."
+subtitle: Each value links back to the highlighted passage on the original document.
 panel: outlined
 ---
 
-<img class="product-desktop" src="/images/product-desktop.png" alt="Insury case screen" />
-<div class="product-fade"></div>
-<div class="product-points">
-  <div class="product-point">
-    <h2 class="t-h2">Every fact, sourced.</h2>
-    <p class="t-body2 c-muted">Each value links to the page it came from.</p>
-  </div>
-  <div class="product-point">
-    <h2 class="t-h2">Every rule, checked.</h2>
-    <p class="t-body2 c-muted">9 of 9 policy rules passed, 0 integrity flags.</p>
-  </div>
-  <div class="product-point">
-    <h2 class="t-h2">A human decides.</h2>
-    <p class="t-body2 c-muted">The adjuster approves, adjusts, rejects or asks for documents.</p>
+<Blob :x="520" :y="80" :size="900" color="#0b22d2" :opacity="0.18" />
+<Dots fade="up" style="left: 0; top: 407px; width: 1328px; height: 625px; opacity: 0.03" />
+
+<div class="doc-page doc-page--back">
+  <header class="doc-head"><span class="doc-org">Autohaus Brandt GmbH</span><span>Seite 1 / 2</span></header>
+  <h3 class="doc-title">Rechnung R-2026-0412</h3>
+  <i style="width: 88%" /><i style="width: 72%" /><i style="width: 80%" /><i style="width: 64%" />
+</div>
+<div class="doc-page">
+  <header class="doc-head"><span class="doc-org">Polizeiinspektion Mettmann</span><span>Seite 1 / 2</span></header>
+  <h3 class="doc-title">Verkehrsunfallanzeige</h3>
+  <dl class="doc-meta">
+    <dt>Aktenzeichen</dt><dd>VU-2026-031187</dd>
+    <dt>Aufgenommen</dt><dd>PHK Brandl, 15.03.2026</dd>
+  </dl>
+  <section>
+    <h4>1. Unfallzeit und -ort</h4>
+    <p>Am <mark data-n="1">15.03.2026</mark> gegen 06:40 Uhr auf der K 6143, km 4,2, zwischen Hausen und Brück.</p>
+  </section>
+  <section>
+    <h4>2. Beteiligtes Fahrzeug</h4>
+    <p>Pkw <mark data-n="2">Škoda Octavia Combi, amtl. Kennz. ME 742 BX</mark>, Halterin Maria Huber.</p>
+  </section>
+  <section>
+    <h4>3. Unfallhergang</h4>
+    <p>Angabe der Fahrzeugführerin:<br><mark data-n="3" class="is-active">„Zusammenstoß mit einem Rehbock, der von rechts aus dem Waldstück auf die Fahrbahn lief.“</mark> Haare und Wildspuren an der Frontpartie wurden vor Ort festgestellt.</p>
+  </section>
+  <section>
+    <h4>4. Sachschaden</h4>
+    <p>Front, Motorhaube und Scheinwerfer rechts beschädigt.</p>
+  </section>
+  <footer class="doc-foot">
+    <span class="doc-stamp">Polizei</span>
+    <span class="doc-sign">Brandl, PHK</span>
+  </footer>
+</div>
+
+<div class="ui-card facts-card">
+  <div class="ui-card-head">Extracted data<span class="status status--pass">24 of 24 sourced</span></div>
+  <div class="facts-list">
+    <div class="fact-row"><span class="fact-n">1</span><span class="fact-text"><span class="fact-key">Loss date</span><span class="fact-val">15 Mar 2026</span></span><span class="src-chip"><Icon name="file" />Police report · p. 1</span></div>
+    <div class="fact-row"><span class="fact-n">2</span><span class="fact-text"><span class="fact-key">Vehicle</span><span class="fact-val">ME 742 BX · Škoda Octavia</span></span><span class="src-chip"><Icon name="file" />Police report · p. 1</span></div>
+    <div class="fact-row is-active"><span class="fact-n">3</span><span class="fact-text"><span class="fact-key">Cause of loss</span><span class="fact-val">Collision with a deer</span></span><span class="src-chip"><Icon name="file" />Police report · p. 1</span></div>
+    <div class="fact-row"><span class="fact-n">4</span><span class="fact-text"><span class="fact-key">Repair cost</span><span class="fact-val">€2,184.60</span></span><span class="src-chip"><Icon name="file" />Invoice · p. 2</span></div>
+    <div class="fact-row"><span class="fact-n">5</span><span class="fact-text"><span class="fact-key">Paid</span><span class="fact-val">€2,184.60</span></span><span class="src-chip"><Icon name="file" />Payment proof · p. 1</span></div>
+    <div class="fact-row"><span class="fact-n">6</span><span class="fact-text"><span class="fact-key">Selbstbehalt</span><span class="fact-val">€300.00</span></span><span class="src-chip"><Icon name="file" />Policy · p. 3</span></div>
   </div>
 </div>
-<div class="signoff-card" style="left: 774px; top: 193px"><img src="/images/signoff-card.png" alt="Sign-off panel" /></div>
+
+<svg class="src-link" width="1328" height="1032" viewBox="0 0 1328 1032" fill="none" aria-hidden="true">
+  <path d="M624 482C676 482 662 591 712 591" stroke="#0b22d2" stroke-width="2.5" stroke-dasharray="6 6" />
+  <circle cx="624" cy="482" r="7" fill="#0b22d2" />
+  <circle cx="712" cy="591" r="7" fill="#0b22d2" />
+</svg>
+
+<div class="src-points">
+  <span class="pill pill--lg pill--tint">Page and passage for every value</span>
+  <span class="pill pill--lg pill--tint">One click to the original</span>
+</div>
 
 <style>
-.product-desktop {
+.doc-page {
   position: absolute;
-  left: 456px;
-  top: 343px;
-  width: 1092px;
-  height: 932px;
-}
-.product-fade {
-  position: absolute;
-  left: 456px;
-  top: 283px;
-  width: 872px;
-  height: 749px;
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #fff 79%);
-}
-.product-points {
-  position: absolute;
-  left: 120px;
-  top: 242px;
-  width: 415px;
+  left: 676px;
+  top: 72px;
+  width: 584px;
+  height: 820px;
+  padding: 44px 48px;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 22px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(4, 13, 30, 0.08), 0 30px 70px rgba(4, 13, 30, 0.14);
+  font-family: Arial, Helvetica, sans-serif;
+  font-variation-settings: normal;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0;
+  color: #2b2f36;
 }
-.product-point {
+.doc-page--back {
+  left: 716px;
+  top: 52px;
+  height: 780px;
+  transform: rotate(4deg);
+  opacity: 0.7;
+}
+.doc-head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #2b2f36;
+  font-size: 14px;
+  color: #6b7280;
+}
+.doc-org {
+  font-weight: 700;
+  color: #2b2f36;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.doc-page .doc-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.doc-meta {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  margin: 0;
+  font-size: 15px;
+}
+.doc-meta dt { color: #6b7280; }
+.doc-meta dd { margin: 0; }
+.doc-page section {
   display: flex;
   flex-direction: column;
+  gap: 6px;
+}
+.doc-page h4 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+}
+.doc-page i {
+  display: block;
+  height: 8px;
+  margin: 6px 0;
+  border-radius: 4px;
+  background: #e5e7eb;
+}
+.doc-page mark {
+  padding: 1px 3px;
+  border-radius: 3px;
+  background: rgba(11, 34, 210, 0.12);
+  color: inherit;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.doc-page mark::before {
+  content: attr(data-n);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  color: #fff;
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: 2px;
+}
+.doc-page mark.is-active {
+  background: rgba(11, 34, 210, 0.2);
+  box-shadow: 0 0 0 2px var(--c-primary);
+}
+.doc-foot {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.doc-stamp {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px double rgba(11, 34, 210, 0.45);
+  border-radius: 50%;
+  color: rgba(11, 34, 210, 0.55);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: rotate(-12deg);
+}
+.doc-sign {
+  width: 200px;
+  padding-top: 8px;
+  border-top: 1px solid #2b2f36;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.facts-card {
+  left: 64px;
+  top: 180px;
+  width: 560px;
+}
+.facts-list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+.fact-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 80px;
+  padding: 0 28px;
+  border-left: 4px solid transparent;
+}
+.fact-row + .fact-row {
+  border-top: 1px solid #efefef;
+}
+.fact-row.is-active {
+  border-left-color: var(--c-primary);
+  background: var(--c-tint);
+}
+.fact-n {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--c-surface);
+  color: var(--c-muted);
+  font-family: var(--f-head);
+  font-size: 15px;
+  font-weight: 600;
+}
+.fact-row:nth-child(-n + 3) .fact-n {
+  background: var(--c-primary);
+  color: #fff;
+}
+.fact-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.fact-key {
+  font-size: 15px;
+  color: var(--c-muted);
+}
+.fact-val {
+  font-size: 21px;
+  letter-spacing: -0.03em;
+}
+.fact-row.is-active .src-chip {
+  background: var(--c-primary);
+  color: #fff;
+}
+
+.src-link {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.src-points {
+  position: absolute;
+  left: 64px;
+  top: 944px;
+  display: flex;
+  gap: 16px;
+}
+</style>
+
+---
+layout: deck
+badge: Policy check
+title: "Every rule,\nexplained."
+subtitle: Each check shows its reasoning and the facts behind it. Missing information is requested. The payout traces back to the invoice lines.
+panel: light
+---
+
+<Blob :x="-200" :y="420" color="#864cce" :opacity="0.35" />
+
+<div class="ui-card rules-card">
+  <div class="ui-card-head">Policy rules<span class="ui-button">Engine output<Icon name="code" /></span></div>
+  <div class="ui-rows">
+    <div class="ui-row"><span>Kasko cover in force on the accident date</span><span class="status status--pass">Pass</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>Covered peril</span><span class="status status--pass">Pass</span><Icon name="chevron-up" /></div>
+    <div class="ui-detail">
+      <p class="rule-q">Cause of loss is a peril covered by the Deckungsumfang on the policy</p>
+      <p>Zusammenstoß mit Haar- oder Federwild (collision with game) is covered under Teilkasko. The police report records “Zusammenstoß mit einem Rehbock”.</p>
+      <div class="rule-facts">
+        <span class="rule-facts-label">Facts used</span>
+        <span class="src-chip"><Icon name="file" />Cause of loss · Police report</span>
+        <span class="src-chip"><Icon name="file" />Teilkasko · Policy</span>
+      </div>
+    </div>
+    <div class="ui-row"><span>Official accident report</span><span class="status status--pass">Pass</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>Damage established before repair</span><span class="status status--pending">Info requested</span><Icon name="chevron-up" /></div>
+    <div class="ui-detail">
+      <p>No photo or appraisal shows the damage before the repair began.</p>
+      <div class="rule-request">
+        <span class="rule-request-icon"><Icon name="send" /></span>
+        <span class="rule-request-text"><strong>Requested from Maria Huber</strong>Photos of the damage before repair</span>
+        <span class="rule-request-meta">Sent 24 Mar</span>
+      </div>
+    </div>
+    <div class="ui-row"><span>No general exclusion applies</span><span class="status status--pass">Pass</span><Icon name="chevron-down" /></div>
+    <div class="ui-row rule-more"><span>+ 4 more rules passed</span></div>
+  </div>
+</div>
+
+<div class="ui-card pay-card">
+  <div class="ui-card-head">Payout calculation</div>
+  <div class="pay-lines">
+    <div class="pay-line"><span class="pay-ref">L1</span><span class="pay-desc">Frontstoßstange, Ersatz inkl. Montage</span><span class="pay-amt">486.00</span></div>
+    <div class="pay-line"><span class="pay-ref">L2</span><span class="pay-desc">Motorhaube, Richt- und Lackierarbeiten</span><span class="pay-amt">612.00</span></div>
+    <div class="pay-line"><span class="pay-ref">L3</span><span class="pay-desc">Scheinwerfer rechts, Ersatz</span><span class="pay-amt">348.00</span></div>
+    <div class="pay-line"><span class="pay-ref">L4</span><span class="pay-desc">Kühlergrill, Ersatz</span><span class="pay-amt">186.00</span></div>
+    <div class="pay-line"><span class="pay-ref">L5</span><span class="pay-desc">Kotflügel vorne rechts, Instandsetzung</span><span class="pay-amt">274.80</span></div>
+    <div class="pay-line"><span class="pay-ref">L6</span><span class="pay-desc">Lackierarbeiten und Arbeitslohn</span><span class="pay-amt">277.80</span></div>
+  </div>
+  <div class="pay-calc">
+    <div class="pay-calc-row"><span>Included</span><span class="src-chip">L1–L6</span><span>€2,184.60</span></div>
+    <div class="pay-calc-row is-strong"><span>Eligible base</span><span>€2,184.60</span></div>
+    <div class="pay-calc-row is-muted"><span>less Selbstbehalt</span><span class="src-chip">Policy</span><span>−€300.00</span></div>
+    <div class="pay-calc-row is-muted"><span>Versicherungssumme</span><span class="src-chip">Policy</span><span>€15,000.00</span></div>
+    <div class="pay-calc-row is-total"><span>Recommended</span><span>€1,884.60</span></div>
+    <div class="pay-ok"><Icon name="circle-check" />Every invoice line is accounted for.</div>
+  </div>
+</div>
+
+<span class="rule-n" style="left: 64px; top: 319px">1</span>
+<span class="rule-n" style="left: 64px; top: 668px">2</span>
+<span class="rule-n" style="left: 772px; top: 505px">3</span>
+<div class="rule-captions">
+  <div class="rule-caption"><span class="rule-n">1</span><p class="t-body3">Reasoning and facts behind every rule</p></div>
+  <div class="rule-caption"><span class="rule-n">2</span><p class="t-body3">Missing information requested</p></div>
+  <div class="rule-caption"><span class="rule-n">3</span><p class="t-body3">Payout traced to invoice lines</p></div>
+</div>
+
+<style>
+.rules-card {
+  left: 64px;
+  top: 64px;
+  width: 676px;
+}
+.rule-q {
+  font-weight: 600;
+  color: var(--c-ink);
+}
+.rule-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 4px;
+}
+.rule-facts-label {
+  margin-right: 4px;
+  font-family: var(--f-head);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.rule-request {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #fff4ec;
+  box-shadow: inset 0 0 0 1px #fdba8c;
+  color: #9a3412;
+}
+.rule-request-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f97316;
+  color: #fff;
+}
+.rule-request-icon .icon svg {
+  width: 20px;
+  height: 20px;
+}
+.rule-request-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+.rule-request-text strong {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--c-ink);
+}
+.rule-request-meta {
+  font-size: 14px;
+  color: #c2410c;
+}
+.ui-row.rule-more {
+  justify-content: center;
+  font-weight: 400;
+  color: var(--c-muted);
+}
+.rule-n {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--g-pink);
+  box-shadow: 0 0 0 4px var(--c-surface), 0 8px 24px rgba(137, 0, 203, 0.3);
+  color: #fff;
+  font-family: var(--f-head);
+  font-size: 20px;
+  font-weight: 500;
+  transform: translate(-50%, -50%);
+}
+.rule-captions {
+  position: absolute;
+  left: 64px;
+  top: 912px;
+  width: 1200px;
+  display: flex;
+  gap: 40px;
+}
+.rule-caption {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rule-caption p {
+  text-wrap: balance;
+}
+.rule-caption .rule-n {
+  position: static;
+  flex: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.pay-card {
+  left: 772px;
+  top: 64px;
+  width: 492px;
+}
+.pay-lines {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 28px;
+}
+.pay-line {
+  display: flex;
+  align-items: center;
   gap: 12px;
+  height: 48px;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+.pay-line + .pay-line {
+  border-top: 1px solid #efefef;
+}
+.pay-ref {
+  width: 34px;
+  height: 26px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: var(--c-tint);
+  color: var(--c-primary);
+  font-family: var(--f-head);
+  font-size: 14px;
+  font-weight: 600;
+}
+.pay-desc {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pay-amt {
+  font-variant-numeric: tabular-nums;
+}
+.pay-calc {
+  margin: 0 28px 28px;
+  padding: 8px 22px 22px;
+  border-radius: 12px;
+  background: var(--c-surface);
+}
+.pay-calc-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+.pay-calc-row > :first-child {
+  flex: 1;
+}
+.pay-calc-row .src-chip {
+  height: 26px;
+  font-size: 14px;
+}
+.pay-calc-row:first-child,
+.pay-calc-row.is-total {
+  padding: 14px 0;
+}
+.pay-calc-row:first-child {
+  color: var(--c-muted);
+  border-bottom: 1px solid var(--c-border);
+  margin-bottom: 6px;
+}
+.pay-calc-row.is-strong {
+  font-weight: 600;
+}
+.pay-calc-row.is-muted {
+  color: var(--c-muted);
+}
+.pay-calc-row.is-total {
+  margin-top: 6px;
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+  font-size: 23px;
+  font-weight: 700;
+}
+.pay-ok {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #f0fbf4;
+  box-shadow: inset 0 0 0 1px #8fdcaf;
+  color: #22a35a;
+  font-size: 17px;
+  font-weight: 600;
+}
+.pay-ok .icon svg {
+  width: 22px;
+  height: 22px;
+}
+</style>
+
+---
+layout: deck
+badge: Fraud detection
+title: "Fraud caught\nbefore payout."
+subtitle: Every document is checked for tampering and every date against the claim timeline. Anything odd goes to a person.
+panel: dark
+---
+
+<Blob :x="560" :y="-200" color="#864cce" :opacity="0.5" />
+
+<div class="ui-card integrity-card">
+  <div class="ui-card-head">Integrity and fraud detection<span class="ui-button">Engine output<Icon name="code" /></span></div>
+  <div class="ui-rows">
+    <div class="ui-row"><span>Payment amount matches the invoice total</span><span class="status status--pass">OK</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>The claimant is the person who paid</span><span class="status status--pass">OK</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>Payment date falls on or after the repair completion date</span><span class="status status--escalate">Escalate</span><Icon name="chevron-up" /></div>
+    <div class="ui-detail">
+      <p>The invoice was paid on 18.03.2026, before the repair completed on 21.03.2026.</p>
+      <span class="c-primary">see full analysis →</span>
+    </div>
+    <div class="ui-row"><span>Timeline runs accident → inspection → repair → payment → submission</span><span class="status status--escalate">Escalate</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>Damage pattern is consistent with the reported cause of loss</span><span class="status status--pass">OK</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>No document shows signs of alteration</span><span class="status status--escalate">Escalate</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>No pre-existing damage on the same parts</span><span class="status status--pass">OK</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>No prior claim already covers this damage event</span><span class="status status--pass">OK</span><Icon name="chevron-down" /></div>
+    <div class="ui-row"><span>Replacement value exceeds the salvage value</span><span class="status status--na">N/A</span><Icon name="chevron-down" /></div>
+  </div>
+</div>
+
+<div class="ui-card tamper-card">
+  <div class="ui-card-head">Document check<span class="status status--escalate">Altered</span></div>
+  <div class="tamper-doc">
+    <div class="tamper-doc-head">Überweisungsbeleg</div>
+    <dl>
+      <dt>Auftraggeber</dt><dd>Maria Huber</dd>
+      <dt>Empfänger</dt><dd>Autohaus Brandt GmbH</dd>
+      <dt>Ausführung</dt><dd><span class="tamper-date">18.03.2026</span></dd>
+      <dt>Betrag</dt><dd><span class="tamper-hit">2.<b>184</b>,60 EUR</span></dd>
+      <dt>Zweck</dt><dd>Rechnung R-2026-0412</dd>
+    </dl>
+  </div>
+  <div class="tamper-lens"><span>2.<b>184</b>,60</span></div>
+  <div class="tamper-finding">
+    <Icon name="alert" />
+    <p><strong>Amount re-typed after issue.</strong> Font and compression differ from the rest of the page.</p>
+  </div>
+</div>
+
+<div class="ui-card timeline-card">
+  <div class="timeline-head">
+    <span class="timeline-title">Claim timeline<span class="status status--escalate">Out of order</span></span>
+    <span class="timeline-expected">Expected: accident → inspection → repair → payment → submission</span>
+  </div>
+  <div class="timeline">
+    <div class="timeline-axis"></div>
+    <div class="timeline-event" style="left: 0%"><i></i><b>15.03</b><span>Accident</span></div>
+    <div class="timeline-event" style="left: 22.2%"><i></i><b>17.03</b><span>Inspection</span></div>
+    <div class="timeline-event is-flag" style="left: 33.3%"><i></i><b>18.03</b><span>Payment</span></div>
+    <div class="timeline-event" style="left: 66.7%"><i></i><b>21.03</b><span>Repair done</span></div>
+    <div class="timeline-event" style="left: 100%"><i></i><b>24.03</b><span>Submitted</span></div>
+    <svg class="timeline-arc" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M2 58C60 0 340 0 398 58" stroke="#864cce" stroke-width="2.5" stroke-dasharray="6 6" fill="none" vector-effect="non-scaling-stroke" />
+    </svg>
+    <span class="timeline-note">Paid 3 days before the repair was done</span>
+  </div>
+</div>
+
+<style>
+.integrity-card {
+  left: 64px;
+  top: 64px;
+  width: 704px;
+}
+.integrity-card .ui-row {
+  min-height: 50px;
+  font-size: 17px;
+}
+.integrity-card .ui-detail {
+  font-size: 16px;
+}
+
+.tamper-card {
+  left: 792px;
+  top: 64px;
+  width: 472px;
+  height: 686px;
+}
+.tamper-doc {
+  margin: 28px 28px 0;
+  padding: 24px 26px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #e5e5e5, 0 12px 30px rgba(4, 13, 30, 0.08);
+  font-family: Arial, Helvetica, sans-serif;
+  font-variation-settings: normal;
+  color: #2b2f36;
+}
+.tamper-doc-head {
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #2b2f36;
+  font-size: 18px;
+  font-weight: 700;
+}
+.tamper-doc dl {
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  row-gap: 12px;
+  margin: 0;
+  font-size: 16px;
+}
+.tamper-doc dt { color: #6b7280; }
+.tamper-doc dd { margin: 0; }
+.tamper-hit {
+  padding: 2px 6px;
+  margin-left: -6px;
+  border-radius: 4px;
+  outline: 2px dashed var(--c-purple);
+  outline-offset: 2px;
+  background: rgba(134, 76, 206, 0.12);
+}
+.tamper-hit b,
+.tamper-lens b {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  position: relative;
+  top: -1px;
+}
+.tamper-date {
+  padding: 2px 6px;
+  margin-left: -6px;
+  border-radius: 4px;
+  background: rgba(134, 76, 206, 0.12);
+}
+.tamper-lens {
+  position: absolute;
+  left: 250px;
+  top: 384px;
+  width: 172px;
+  height: 172px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(0deg, rgba(4, 13, 30, 0.035) 0 2px, transparent 2px 6px),
+    repeating-linear-gradient(90deg, rgba(4, 13, 30, 0.035) 0 2px, transparent 2px 6px),
+    #fff;
+  box-shadow: 0 0 0 6px var(--c-ink), 0 0 0 8px var(--c-purple), 0 20px 40px rgba(4, 13, 30, 0.3);
+  font-family: Arial, Helvetica, sans-serif;
+  font-variation-settings: normal;
+  font-size: 36px;
+  color: #2b2f36;
+}
+.tamper-lens::after {
+  content: '';
+  position: absolute;
+  right: -34px;
+  bottom: -34px;
+  width: 52px;
+  height: 14px;
+  border-radius: 7px;
+  background: var(--c-ink);
+  transform: rotate(45deg);
+}
+.tamper-lens b {
+  padding: 0 2px;
+  background: rgba(134, 76, 206, 0.16);
+  box-shadow: 0 0 0 1px rgba(134, 76, 206, 0.5);
+}
+.tamper-finding {
+  margin: auto 28px 28px;
+  display: flex;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: #f7f0fd;
+  box-shadow: inset 0 0 0 1px #cba8ee;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #5b2a99;
+}
+.tamper-finding .icon {
+  color: var(--c-purple);
+}
+.tamper-finding .icon svg {
+  width: 26px;
+  height: 26px;
+}
+.tamper-finding strong {
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+.timeline-card {
+  left: 64px;
+  top: 774px;
+  width: 1200px;
+  height: 194px;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+  padding: 0 64px 0 32px;
+}
+.timeline-head {
+  width: 340px;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 10px;
+}
+.timeline-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--f-head);
+  font-size: 30px;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+.timeline-expected {
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--c-muted);
+}
+.timeline {
+  position: relative;
+  flex: 1;
+  margin-top: 56px;
+  height: 80px;
+}
+.timeline-axis {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7px;
+  height: 2px;
+  background: var(--c-border);
+}
+.timeline-event {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-50%);
+  font-size: 17px;
+  white-space: nowrap;
+}
+.timeline-event i {
+  width: 16px;
+  height: 16px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  box-shadow: 0 0 0 4px #fff;
+}
+.timeline-event b {
+  font-weight: 600;
+}
+.timeline-event span {
+  color: var(--c-muted);
+}
+.timeline-event.is-flag {
+  color: var(--c-purple);
+}
+.timeline-event.is-flag i {
+  background: var(--c-purple);
+  box-shadow: 0 0 0 4px #fff, 0 0 0 8px rgba(134, 76, 206, 0.25);
+}
+.timeline-event.is-flag span {
+  color: var(--c-purple);
+}
+.timeline-arc {
+  position: absolute;
+  left: 33.3%;
+  width: 33.4%;
+  top: -34px;
+  height: 40px;
+  overflow: visible;
+}
+.timeline-note {
+  position: absolute;
+  left: 50%;
+  top: -54px;
+  transform: translateX(-50%);
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: #f7f0fd;
+  color: var(--c-purple);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 </style>
 
@@ -648,7 +1452,7 @@ panel: outlined
 layout: deck
 badge: Audit trail
 title: Every step on record.
-subtitle: AI assesses the claim. An adjuster decides it.
+subtitle: Who did what and when? Every action and detail is logged for clear auditability.
 panel: white
 ---
 
@@ -670,12 +1474,12 @@ panel: white
   <span class="t-body2">Checked: 9 of 9 rules passed, 0 integrity flags</span>
 </div>
 <div class="audit-event" style="top: 532px; --tone: var(--c-primary)">
-  <span class="t-body2">14:32</span>
+  <span class="t-body2">14:22</span>
   <span class="pill pill--lg pill--primary audit-actor">User</span>
   <span class="t-body2">Bob Meyer signed off as recommended: €3,900.00</span>
 </div>
 <div class="audit-total">
-  <div class="t-h1">27 minutes</div>
+  <div class="t-h1">17 minutes</div>
   <p class="t-body3">from intake to sign-off, each step logged with its actor.</p>
 </div>
 <svg class="audit-line" width="78" height="672" viewBox="0 0 78 672" fill="none" aria-hidden="true">
@@ -755,8 +1559,8 @@ panel: white
 ---
 layout: deck
 badge: Product roadmap
-title: Motor first. Every line next.
-subtitle: The pipeline is line-agnostic. A new line means new rule sets on the same pipeline.
+title: "One pipeline.\nEvery line."
+subtitle: Every claim is documents checked against a policy. So each line of insurance runs on the same pipeline.
 panel: light
 ---
 
@@ -764,25 +1568,35 @@ panel: light
 <div class="phase phase--now" style="left: 80px; top: 275px">
   <Badge size="sm">Now · [2027]</Badge>
   <div class="phase-text">
-    <h3 class="t-h3">Motor own-damage, DACH</h3>
-    <p class="t-body3">All five settlement types: repair invoice, notional, self-repair, total loss, salvage sale.</p>
+    <h3 class="t-h3">Motor claims</h3>
+    <p class="t-body3">Car damage in DACH, from a small repair bill to a full write-off.</p>
   </div>
 </div>
 <div class="phase" style="left: 473px; top: 195px">
-  <Badge variant="pink" size="sm">Next · [20__]</Badge>
+  <Badge variant="pink" size="sm">Next · [2028]</Badge>
   <div class="phase-text">
-    <h3 class="t-h3">All motor lines</h3>
-    <p class="t-body3">Third-party liability and fleet, on the same pipeline with new rule sets.</p>
+    <h3 class="t-h3">Property claims</h3>
+    <p class="t-body3">Homes and belongings damaged by water, storm, fire or burglary.</p>
   </div>
 </div>
 <div class="phase" style="left: 866px; top: 115px">
-  <Badge variant="pink" size="sm">Later · [20__]</Badge>
+  <Badge variant="pink" size="sm">Later · [2029]</Badge>
   <div class="phase-text">
-    <h3 class="t-h3">Property and household</h3>
-    <p class="t-body3">Document-heavy claims, same read, check and sign-off logic.</p>
+    <h3 class="t-h3">Travel claims</h3>
+    <p class="t-body3">Cancelled trips, lost luggage and medical bills abroad.</p>
   </div>
 </div>
-<div class="phase-changes">
+<div class="phase-rows">
+  <span class="t-body2">Same for every line</span>
+  <div class="phase-pills phase-pills--steps">
+    <span class="pill pill--lg pill--ink">Read</span>
+    <Icon name="chevron-right" class="phase-step" />
+    <span class="pill pill--lg pill--ink">Extract</span>
+    <Icon name="chevron-right" class="phase-step" />
+    <span class="pill pill--lg pill--ink">Check</span>
+    <Icon name="chevron-right" class="phase-step" />
+    <span class="pill pill--lg pill--ink">Sign off</span>
+  </div>
   <span class="t-body2">What changes per line</span>
   <div class="phase-pills">
     <span class="pill pill--lg pill--tint">Document types</span>
@@ -813,21 +1627,32 @@ panel: light
   flex-direction: column;
   gap: 12px;
 }
-.phase-changes {
+.phase-rows {
   position: absolute;
-  left: 244px;
-  top: 920px;
-  width: 1004px;
-  display: flex;
+  left: 80px;
+  top: 812px;
+  display: grid;
+  grid-template-columns: auto auto;
   align-items: center;
-  gap: 40px;
+  gap: 28px 40px;
 }
 .phase-pills {
   display: flex;
+  align-items: center;
   gap: 16px;
+}
+.phase-pills--steps {
+  gap: 8px;
 }
 .phase-pills .pill {
   height: 49px;
+}
+.phase-step {
+  color: var(--c-muted);
+}
+.phase-step :deep(svg) {
+  width: 28px;
+  height: 28px;
 }
 </style>
 
@@ -888,7 +1713,7 @@ panel: light
     </div>
     <div class="compare-row">
       <span>Time per claim</span>
-      <span class="compare-cell is-insury"><Icon name="check" />30 min</span>
+      <span class="compare-cell is-insury"><Icon name="check" />15 minutes</span>
       <span class="compare-cell"><Icon name="cross" class="is-no" />4 hours</span>
       <span class="compare-cell"><Icon name="cross" class="is-no" />4 hours</span>
     </div>
@@ -1448,43 +2273,24 @@ panel: light
 
 <div class="team">
   <div class="team-card">
-    <div class="team-photo"></div>
-    <div class="team-info">
-      <div class="team-name">
-        <h3 class="t-h3">Lorem Ipsum</h3>
-        <span class="t-label-sm c-primary">[Founder & CEO]</span>
-      </div>
-      <p class="t-body3 c-muted">[Years in claims, former employer]</p>
+    <img class="team-photo" src="/images/team/sebastian-hermans.webp" alt="Sebastian Hermans" />
+    <div class="team-name">
+      <h3 class="t-h3">Sebastian Hermans</h3>
+      <span class="t-label-sm c-primary">[CEO]</span>
     </div>
   </div>
   <div class="team-card">
-    <div class="team-photo"></div>
-    <div class="team-info">
-      <div class="team-name">
-        <h3 class="t-h3">Lorem Ipsum</h3>
-        <span class="t-label-sm c-primary">[Founder & CEO]</span>
-      </div>
-      <p class="t-body3 c-muted">[Years in claims, former employer]</p>
+    <img class="team-photo" src="/images/team/henri-toivar.webp" alt="Henri Toivar" />
+    <div class="team-name">
+      <h3 class="t-h3">Henri Toivar</h3>
+      <span class="t-label-sm c-primary">[Senior Developer]</span>
     </div>
   </div>
   <div class="team-card">
-    <div class="team-photo"></div>
-    <div class="team-info">
-      <div class="team-name">
-        <h3 class="t-h3">Lorem Ipsum</h3>
-        <span class="t-label-sm c-primary">[Founder & CEO]</span>
-      </div>
-      <p class="t-body3 c-muted">[Years in claims, former employer]</p>
-    </div>
-  </div>
-  <div class="team-card">
-    <div class="team-photo"></div>
-    <div class="team-info">
-      <div class="team-name">
-        <h3 class="t-h3">Lorem Ipsum</h3>
-        <span class="t-label-sm c-primary">[Founder & CEO]</span>
-      </div>
-      <p class="t-body3 c-muted">[Years in claims, former employer]</p>
+    <img class="team-photo" src="/images/team/marek-fraczyk.webp" alt="Marek Fraczyk" />
+    <div class="team-name">
+      <h3 class="t-h3">Marek Fraczyk</h3>
+      <span class="t-label-sm c-primary">[Senior Developer]</span>
     </div>
   </div>
 </div>
@@ -1509,18 +2315,14 @@ panel: light
   width: 233px;
   height: 372px;
   flex: none;
+  object-fit: cover;
   background: var(--c-border);
-}
-.team-info {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding-top: 46px;
 }
 .team-name {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding-top: 46px;
   color: #000;
 }
 </style>
