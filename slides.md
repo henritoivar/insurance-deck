@@ -2292,6 +2292,7 @@ panel: light
     <div class="team-name">
       <h3 class="t-h3">Sebastian Hermans</h3>
       <span class="t-label-sm c-primary">[CEO]</span>
+      <p class="team-bio t-body3 c-muted">Managed venture studios. Formerly at Amazon.</p>
     </div>
   </div>
   <div class="team-card">
@@ -2299,6 +2300,7 @@ panel: light
     <div class="team-name">
       <h3 class="t-h3">Henri Toivar</h3>
       <span class="t-label-sm c-primary">[Senior Developer]</span>
+      <p class="team-bio t-body3 c-muted">13+ years developing software and building enterprise solutions.</p>
     </div>
   </div>
   <div class="team-card">
@@ -2306,6 +2308,15 @@ panel: light
     <div class="team-name">
       <h3 class="t-h3">Marek Fraczyk</h3>
       <span class="t-label-sm c-primary">[Senior Developer]</span>
+      <p class="team-bio t-body3 c-muted">13+ years developing software and building enterprise solutions.</p>
+    </div>
+  </div>
+  <div class="team-card">
+    <img class="team-photo" src="/images/team/sebastian-becker.webp" alt="Sebastian Becker" />
+    <div class="team-name">
+      <h3 class="t-h3">Sebastian Becker</h3>
+      <span class="t-label-sm c-primary">[Senior Designer]</span>
+      <p class="team-bio t-body3 c-muted">Extensive experience in product design.</p>
     </div>
   </div>
 </div>
@@ -2339,6 +2350,9 @@ panel: light
   gap: 4px;
   padding-top: 46px;
   color: #000;
+}
+.team-bio {
+  margin-top: 16px;
 }
 </style>
 
