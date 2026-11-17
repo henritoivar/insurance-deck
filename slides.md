@@ -15,9 +15,8 @@ layout: cover
 <Blob :x="960" :y="-244" color="#0b22d2" />
 <Logo class="cover-logo" />
 <div class="cover-copy">
-  <h1 class="t-hero">AI claims.<br><span class="c-primary">Human decisions.</span></h1>
-  <p class="t-body2">Insury reads each document, checks the policy and calculates the payout. Adjusters make the call, and the audit trail records each step.</p>
-  <p class="t-body3 c-primary">Seed round · [November 2026]</p>
+  <h1 class="t-hero">Insurance claims,<br><span class="c-primary">decided in minutes.</span></h1>
+  <p class="t-body2">AI reads. Rules decide. Your team signs off.</p>
 </div>
 <img class="cover-shot" src="/images/product-report.png" alt="Insury report and sign-off screen" />
 <div class="signoff-card cover-signoff"><img src="/images/signoff-card.png" alt="Sign-off panel" /></div>
@@ -45,6 +44,9 @@ layout: cover
   flex-direction: column;
   gap: 40px;
 }
+.cover-copy .t-hero {
+  white-space: nowrap;
+}
 .cover-shot {
   position: absolute;
   left: 990px;
@@ -64,35 +66,17 @@ layout: cover
 ---
 layout: deck
 badge: The problem
-title: Claims, read by hand.
-subtitle: Adjusters apply rules from memory and leave no record of why.
-subtitleTone: ink
+title: "Claims handling\ndoesn't scale"
 panel: white
 ---
 
 <Blob :x="-197" :y="659" color="#864cce" />
 <div class="problem">
-  <div class="problem-row">
-    <div class="t-title c-primary">6</div>
-    <div class="problem-text">
-      <h3 class="t-h3">Documents per case</h3>
-      <p class="t-body3 c-muted">Claim form, police report, expert appraisal, repair invoice, proof of payment, registration. An adjuster reads and cross-checks each one.</p>
-    </div>
-  </div>
-  <div class="problem-row">
-    <div class="t-title c-primary">By hand</div>
-    <div class="problem-text">
-      <h3 class="t-h3">Rules applied from memory</h3>
-      <p class="t-body3 c-muted">Adjusters check cover on the loss date, deductible, sum insured and exclusions by hand, case by case.</p>
-    </div>
-  </div>
-  <div class="problem-row">
-    <div class="t-title c-primary">No trail</div>
-    <div class="problem-text">
-      <h3 class="t-h3">Decisions without a trail</h3>
-      <p class="t-body3 c-muted">Few files record why an amount was paid in a form an auditor, a regulator or a court can follow.</p>
-    </div>
-  </div>
+  <h3 class="t-h1 c-primary problem-row">Costly manual work</h3>
+  <h3 class="t-h1 c-primary problem-row">Slow decisions</h3>
+  <h3 class="t-h1 c-primary problem-row">Easy to get wrong</h3>
+  <h3 class="t-h1 c-primary problem-row">Open to fraud</h3>
+  <h3 class="t-h1 c-primary problem-row">Hard to audit</h3>
 </div>
 
 <style>
@@ -102,161 +86,335 @@ panel: white
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 64px;
+  gap: 28px;
 }
 .problem-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 240px;
-  padding-bottom: 64px;
+  padding-bottom: 28px;
   border-bottom: 1px solid var(--c-border);
-}
-.problem-text {
-  width: 520px;
-  flex: none;
-  padding-top: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 </style>
 
 ---
 layout: deck
 badge: The stakes
-title: Claims are the biggest cost.
-subtitle: Faster, more accurate claims handling goes straight to the bottom line.
+title: What it costs you
 panel: white
 ---
 
 <img class="stripes flip-y" style="top: -54px" src="/images/stripes-grey.png" alt="" />
 <img class="stripes" style="top: 516px" src="/images/stripes-grey.png" alt="" />
 <div class="stakes">
-  <div class="stakes-figure">60%</div>
-  <h2 class="t-h2">...of each motor premium goes to claims.</h2>
+  <div class="stakes-stat">
+    <div class="stakes-figure">100</div>
+    <h2 class="t-h2">minutes of handling per motor claim</h2>
+  </div>
+  <div class="stakes-stat">
+    <div class="stakes-figure">62</div>
+    <h2 class="t-h2">days to close a motor claim</h2>
+  </div>
+  <div class="stakes-stat">
+    <div class="stakes-figure">10%</div>
+    <h2 class="t-h2">of claims spend lost to fraud</h2>
+  </div>
+  <div class="stakes-stat">
+    <div class="stakes-figure">42%</div>
+    <h2 class="t-h2">of disputed claims overturned on appeal</h2>
+  </div>
 </div>
+<p class="t-body3 c-muted stakes-source">Sources: Univ. of Lausanne non-life claims benchmark, DACH insurers (standard motor claims); Insurance Europe; UK Financial Ombudsman (claims complaints upheld).</p>
 
 <style>
 .stakes {
   position: absolute;
-  inset: 120px;
+  inset: 120px 120px 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  gap: 72px 80px;
+}
+.stakes-stat {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-align: center;
+  gap: 8px;
 }
 .stakes-figure {
   font-family: var(--f-head);
-  font-size: 380px;
+  font-size: 200px;
   line-height: 1;
   letter-spacing: -0.05em;
   color: var(--c-primary);
+}
+.stakes-source {
+  position: absolute;
+  left: 120px;
+  right: 120px;
+  bottom: 64px;
+  font-size: 18px;
 }
 </style>
 
 ---
 layout: deck
 badge: The solution
-title: "From inbox\nto sign-off."
-subtitle: Insury runs eleven steps. The adjuster takes the last one.
+title: "Documents in.\nDecisions out."
 panel: dark
 ---
 
 <Blob :x="224" :y="9" color="#864cce" />
-<div class="steps">
-  <div class="step">
-    <div class="step-top">
-      <Badge variant="pink" size="sm">01 Read</Badge>
-      <h2 class="t-h2">Every page, understood.</h2>
-    </div>
-    <p class="t-body3">Insury splits bundled files, classifies each document, then extracts and validates the facts that matter.</p>
+<div class="flow">
+  <header class="flow-head">
+    <Badge variant="pink" size="sm">01 Read</Badge>
+    <h2 class="t-h3">Messy documents</h2>
+  </header>
+  <header class="flow-head">
+    <Badge variant="pink" size="sm">02 Extract</Badge>
+    <h2 class="t-h3">Structured facts</h2>
+  </header>
+  <header class="flow-head">
+    <Badge variant="pink" size="sm">03 Check</Badge>
+    <h2 class="t-h3">Against your policy</h2>
+  </header>
+
+  <div class="docs">
+    <div class="doc"><div class="doc-head"><span>Claim form</span><span class="doc-tag">PDF</span></div><i style="width: 92%" /><i style="width: 64%" /></div>
+    <div class="doc"><div class="doc-head"><span>Police report</span><span class="doc-tag">Scan</span></div><i style="width: 78%" /><i style="width: 88%" /></div>
+    <div class="doc"><div class="doc-head"><span>Expert appraisal</span><span class="doc-tag">PDF</span></div><i style="width: 85%" /><i style="width: 52%" /></div>
+    <div class="doc"><div class="doc-head"><span>Repair invoice</span><span class="doc-tag">Photo</span></div><i style="width: 70%" /><i style="width: 90%" /></div>
+    <div class="doc"><div class="doc-head"><span>Proof of payment</span><span class="doc-tag">Scan</span></div><i style="width: 94%" /><i style="width: 60%" /></div>
+    <div class="doc"><div class="doc-head"><span>Registration</span><span class="doc-tag">Photo</span></div><i style="width: 66%" /><i style="width: 82%" /></div>
   </div>
-  <div class="step">
-    <div class="step-top">
-      <Badge variant="pink" size="sm">02 Check</Badge>
-      <h2 class="t-h2">Every rule, applied.</h2>
-    </div>
-    <p class="t-body3">Insury pulls the policy as of the loss date, tests each rule and runs integrity checks.</p>
+
+  <div class="facts">
+    <div class="fact"><span class="fact-key">Policy</span><span class="fact-src">Claim form</span><span class="fact-val">123456789 · Teilkasko</span></div>
+    <div class="fact"><span class="fact-key">Vehicle</span><span class="fact-src">Registration</span><span class="fact-val">ME 742 BX · Škoda Octavia</span></div>
+    <div class="fact"><span class="fact-key">Loss date</span><span class="fact-src">Police report</span><span class="fact-val">15 Mar 2026</span></div>
+    <div class="fact"><span class="fact-key">Cause</span><span class="fact-src">Appraisal</span><span class="fact-val">Collision with a deer</span></div>
+    <div class="fact"><span class="fact-key">Repair cost</span><span class="fact-src">Invoice</span><span class="fact-val">€2,184.60</span></div>
+    <div class="fact"><span class="fact-key">Paid</span><span class="fact-src">Payment proof</span><span class="fact-val">€2,184.60</span></div>
   </div>
-  <div class="step step--active">
-    <div class="step-top">
-      <Badge variant="pink" size="sm">03 Decide</Badge>
-      <h2 class="t-h2">Every decision, signed.</h2>
+
+  <div class="checks">
+    <div class="check"><Icon name="check" />Cover active on loss date</div>
+    <div class="check"><Icon name="check" />Wildlife collision is covered</div>
+    <div class="check"><Icon name="check" />Same car on every document</div>
+    <div class="check"><Icon name="check" />Invoice matches payment</div>
+    <div class="check"><Icon name="check" />€300 deductible applied</div>
+    <div class="reco">
+      <span class="t-label-sm c-primary">Recommendation</span>
+      <span class="reco-amount">Pay €1,884.60</span>
+      <span class="reco-why">Invoice − €300 deductible</span>
     </div>
-    <p class="t-body3">Insury calculates the payout. An adjuster approves, adjusts, rejects or asks for documents.</p>
   </div>
-</div>
-<Icon name="arrow-circle" class="abs" style="left: 440px; top: 359px" />
-<Icon name="arrow-circle" class="abs" style="left: 808px; top: 359px" />
-<div class="step-stats t-body2">
-  <div class="step-stat"><span class="pill pill--count pill--purple">11</span>Automated steps</div>
-  <div class="step-stat"><span class="pill pill--count pill--purple">5</span>Settlement types</div>
-  <div class="step-stat"><span class="pill pill--count pill--purple">1</span>Human sign-off</div>
+
+  <Icon name="arrow-circle" class="flow-arrow" style="grid-column: 1 / 3" />
+  <Icon name="arrow-circle" class="flow-arrow" style="grid-column: 2 / 4" />
+
+  <div class="hitl">
+    <h2 class="t-h3">Human in the loop</h2>
+    <p class="hitl-text">Your adjuster approves, adjusts or rejects. Nothing is paid without a person signing off.</p>
+    <Badge variant="pink" size="sm">04 Sign off</Badge>
+  </div>
+  <Icon name="arrow-circle" class="flow-arrow-down" />
 </div>
 
 <style>
-.steps {
+.flow {
   position: absolute;
-  left: 120px;
-  top: 120px;
-  width: 1088px;
-  height: 586px;
-  display: flex;
-  gap: 12px;
+  left: 80px;
+  top: 112px;
+  width: 1168px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 32px 48px;
+  color: #fff;
 }
-.step {
-  flex: 1;
+.flow-head {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+.flow-arrow {
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
+}
+
+.docs {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 12px;
+}
+.doc {
+  margin-top: -14px;
+  padding: 16px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  background: var(--c-surface);
+  color: var(--c-ink);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+.doc:nth-child(1) { transform: rotate(-4deg) translateX(-8px); }
+.doc:nth-child(2) { transform: rotate(3deg) translateX(14px); }
+.doc:nth-child(3) { transform: rotate(-2deg) translateX(-4px); }
+.doc:nth-child(4) { transform: rotate(5deg) translateX(10px); }
+.doc:nth-child(5) { transform: rotate(-3deg) translateX(-12px); }
+.doc:nth-child(6) { transform: rotate(2deg) translateX(6px); }
+.doc-head {
+  display: flex;
   justify-content: space-between;
-  padding: 32px 24px;
+  align-items: center;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+.doc-tag {
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--c-muted);
+  box-shadow: inset 0 0 0 1px var(--c-border);
+}
+.doc i {
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--c-border);
+}
+
+.facts {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--c-ink);
+}
+.fact {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 4px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--c-border);
+}
+.fact:last-child { border-bottom: none; }
+.fact-key {
+  font-size: 16px;
+  color: var(--c-muted);
+}
+.fact-src {
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--c-primary);
+  background: var(--c-tint);
+}
+.fact-val {
+  grid-column: 1 / -1;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+
+.checks {
+  grid-column: 3;
+  grid-row: 2;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: inset 0 0 0 1px rgba(212, 212, 212, 0.2);
-  color: #fff;
 }
-.step--active {
-  background: #fff;
-  box-shadow: none;
-  color: #000;
-}
-.step-top {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.step-stats {
-  position: absolute;
-  left: 120px;
-  top: 869px;
-  width: 1088px;
-  display: flex;
-  justify-content: center;
-  gap: 64px;
-  color: #fff;
-}
-.step-stat {
+.check {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+.check :deep(svg) {
+  width: 28px;
+  height: 28px;
+  color: #4ade80;
+}
+.reco {
+  margin-top: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--c-ink);
+}
+.reco-amount {
+  font-family: var(--f-head);
+  font-size: 36px;
+  letter-spacing: -0.05em;
+}
+.reco-why {
+  font-size: 16px;
+  color: var(--c-muted);
+}
+
+.hitl {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  padding: 40px 32px 28px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(212, 212, 212, 0.2);
+}
+.hitl h2 {
+  flex: none;
+}
+.hitl .badge {
+  margin-left: auto;
+}
+.hitl-text {
+  max-width: 440px;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.7);
+}
+.flow-arrow-down {
+  grid-column: 3;
+  grid-row: 3;
+  justify-self: center;
+  align-self: start;
+  margin-top: -54.5px;
+  transform: rotate(90deg);
+  z-index: 1;
 }
 </style>
 
 ---
 layout: deck
 badge: Why now
-title: AI may assess. It may not decide alone.
-subtitle: The EU AI Act puts human oversight, logging and transparency at the centre of high-risk AI.
+title: AI evaluates. Human approves.
+subtitle: EU AI Act, GDPR compliant.
 panel: light
 ---
 
 <Blob :x="-229" :y="-320" color="#0b22d2" />
-<h2 class="t-h2 act-lead">Insurers hold claims automation to that bar. Black-box tools fail it. Insury builds it in.</h2>
+<h2 class="t-h2 act-lead">Be in control of the process and data.</h2>
 <div class="act-table">
   <div class="act-head t-h3">
-    <span>AI Act requirement</span>
+    <span>Requirement</span>
     <span>In Insury</span>
   </div>
   <div class="act-row t-body2">
@@ -279,8 +437,13 @@ panel: light
     <span>Accuracy</span>
     <span class="c-primary">Conflicts between documents are flagged</span>
   </div>
+  <div class="act-row t-body2">
+    <span class="act-icon"><Icon name="privacy" /></span>
+    <span>GDPR · Data residency</span>
+    <span class="c-primary">Claim data stays in the EU</span>
+  </div>
 </div>
-<p class="t-body3 c-muted act-source">Sources: EU AI Act, Art. 12–14 and Annex III; insurance analyses by Holistic AI and PwC</p>
+<p class="t-body3 c-muted act-source">Sources: EU AI Act, Art. 12–14 and Annex III; GDPR, Chapter V; insurance analyses by Holistic AI and PwC</p>
 
 <style>
 .act-lead {
@@ -293,9 +456,9 @@ panel: light
 .act-table {
   position: absolute;
   left: 120px;
-  top: 332px;
+  top: 300px;
   width: 1088px;
-  height: 455px;
+  height: 504px;
   border: 2px solid transparent;
   border-radius: 12px;
   background:
@@ -317,7 +480,7 @@ panel: light
   grid-template-columns: 48px 358px 1fr;
   column-gap: 24px;
   align-items: center;
-  padding: 20px 38px;
+  padding: 16px 38px;
 }
 .act-row + .act-row {
   border-top: 1px solid var(--c-border);
@@ -335,7 +498,7 @@ panel: light
 .act-source {
   position: absolute;
   left: 120px;
-  top: 923px;
+  top: 900px;
   width: 1088px;
   text-align: center;
 }
@@ -345,7 +508,7 @@ panel: light
 layout: deck
 badge: Market size
 title: Claims software is doubling.
-subtitle: Motor is the largest line in European P&C insurance. Our beachhead.
+subtitle: 40 million motor claims a year in Europe. We start with 11 million in DACH.
 panel: blue
 ---
 
@@ -353,12 +516,12 @@ panel: blue
 <div class="market-circle" style="left: 72px; top: 317px; width: 491px; height: 491px; background: rgba(11, 34, 210, 0.2)"></div>
 <div class="market-circle" style="left: 184px; top: 556px; width: 266px; height: 266px; background: var(--c-primary)"></div>
 <Blob :x="-404" :y="10" color="#0b22d2" :opacity="1" />
-<div class="market-label t-body3 c-primary" style="left: 176px; top: 188px; width: 281px">TAM · Motor claims, Europe</div>
-<div class="market-value t-h1" style="left: 236px; top: 214px">€xxx</div>
-<div class="market-label t-body3 c-primary" style="left: 219px; top: 413px; width: 197px">SAM · Motor, DACH</div>
-<div class="market-value t-h1" style="left: 237px; top: 439px">€xxx</div>
-<div class="market-label t-body3 c-white" style="left: 298px; top: 641px; width: 52px">SOM</div>
-<div class="market-value t-h1 c-white" style="left: 244px; top: 667px">€xxx</div>
+<div class="market-label t-body3 c-primary" style="top: 188px">TAM · Motor claims, Europe</div>
+<div class="market-value t-h1" style="top: 214px">€400M</div>
+<div class="market-label t-body3 c-primary" style="top: 413px">SAM · Motor, DACH</div>
+<div class="market-value t-h1" style="top: 439px">€110M</div>
+<div class="market-label t-body3 c-white" style="top: 641px">SOM · 5% of DACH</div>
+<div class="market-value t-h1 c-white" style="top: 667px">€5.5M</div>
 <div class="market-stats">
   <div class="market-stat">
     <div class="t-title">€9.0B</div>
@@ -373,21 +536,19 @@ panel: blue
     <p class="t-body3">Motor’s share of European P&C insurance, the largest line.</p>
   </div>
 </div>
-<p class="market-sources">Sources: Market Research Intellect (Feb 2026); Research and Markets (2026); Insurance Europe.</p>
-<p class="market-method t-body3">Bottom-up: [__ million claims] × [€__ per claim]</p>
+<p class="market-sources">Sources: Market Research Intellect (Feb 2026); Research and Markets (2026); Insurance Europe; GDV; VVO.</p>
+<p class="market-method t-body3">Bottom-up: motor claims per year × €10 per assessed claim</p>
 
 <style>
 .market-circle {
   position: absolute;
   border-radius: 50%;
 }
-.market-label {
-  position: absolute;
-  text-align: center;
-  white-space: nowrap;
-}
+.market-label,
 .market-value {
   position: absolute;
+  left: 317px;
+  transform: translateX(-50%);
   white-space: nowrap;
 }
 .market-stats {
